@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Payment Successful — Ringback</title>
+  <title>Payment Successful</title>
   <style>
     * {
       margin: 0;
@@ -13,8 +13,8 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0F172A;
-      color: #FFFFFF;
+      background: #F6F9FC;
+      color: #1A1F36;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -24,26 +24,27 @@
 
     .container {
       text-align: center;
-      max-width: 380px;
+      max-width: 400px;
       width: 100%;
     }
 
     .icon-circle {
-      width: 88px;
-      height: 88px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
-      background: rgba(34, 197, 94, 0.15);
+      background: #FFFFFF;
+      border: 2px solid #E0E6EB;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 28px auto;
-      animation: scaleIn 0.5s ease-out;
+      margin: 0 auto 24px auto;
+      animation: scaleIn 0.4s ease-out;
     }
 
     .checkmark {
-      width: 44px;
-      height: 44px;
-      stroke: #22C55E;
+      width: 32px;
+      height: 32px;
+      stroke: #30B566;
       stroke-width: 3;
       fill: none;
       stroke-linecap: round;
@@ -53,54 +54,20 @@
     .checkmark-path {
       stroke-dasharray: 60;
       stroke-dashoffset: 60;
-      animation: draw 0.6s ease-out 0.3s forwards;
+      animation: draw 0.5s ease-out 0.3s forwards;
     }
 
     h1 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: #FFFFFF;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.5;
-      margin-bottom: 36px;
-    }
-
-    .open-app-btn {
-      display: inline-block;
-      background: #3B82F6;
-      color: #FFFFFF;
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 600;
-      padding: 16px 48px;
-      border-radius: 14px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-      -webkit-tap-highlight-color: transparent;
+      margin-bottom: 8px;
+      color: #1A1F36;
     }
 
-    .open-app-btn:active {
-      background: #2563EB;
-    }
-
-    .hint {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.35);
-      margin-top: 20px;
-    }
-
-    .brand {
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.25);
-      margin-top: 48px;
-      letter-spacing: 0.5px;
+    .message {
+      font-size: 15px;
+      color: #6B7C93;
+      line-height: 1.6;
     }
 
     @keyframes scaleIn {
@@ -117,18 +84,12 @@
   <div class="container">
     <div class="icon-circle">
       <svg class="checkmark" viewBox="0 0 44 44">
-        <path class="checkmark-path" d="M10 22 L18 30 L34 14" />
+        <path class="checkmark-path" d="M12 22 L19 29 L32 16" />
       </svg>
     </div>
 
-    <h1>Payment Accepted</h1>
-    <p class="subtitle">Your subscription is now active.<br>You're all set to receive calls.</p>
-
-    <a href="ringback://home" class="open-app-btn">Open Ringback</a>
-
-    <p class="hint">Or close this page and open the app</p>
-
-    <p class="brand">RINGBACK</p>
+    <h1>Payment successful</h1>
+    <p class="message">You're all set. Close this page and return to the app.</p>
   </div>
 </body>
 </html>
