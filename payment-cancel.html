@@ -10,10 +10,7 @@
     .container { text-align: center; max-width: 400px; width: 100%; }
     .icon-circle { width: 72px; height: 72px; border-radius: 50%; background: #FFFFFF; border: 2px solid #E0E6EB; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; }
     h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #1A1F36; }
-    .message { font-size: 15px; color: #6B7C93; line-height: 1.6; margin-bottom: 28px; }
-    .back-btn { display: inline-block; background: #635BFF; color: #fff; font-size: 16px; font-weight: 600; padding: 14px 40px; border-radius: 8px; border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .back-btn:active { background: #4B45C6; }
-    .hint { font-size: 13px; color: #A0AEC0; margin-top: 16px; }
+    .message { font-size: 15px; color: #6B7C93; line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -24,9 +21,7 @@
       </svg>
     </div>
     <h1>Go back?</h1>
-    <p class="message">Tap below to return to the previous page.</p>
-    <button class="back-btn" onclick="history.back()">Go back</button>
-    <p class="hint">Or close this tab to return to the app.</p>
+    <p class="message">Close this tab to return to the app.</p>
   </div>
 </body>
 </html>
