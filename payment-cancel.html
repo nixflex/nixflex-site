@@ -6,25 +6,49 @@
   <title>Ringback</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F6F9FC; color: #1A1F36; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .container { text-align: center; max-width: 400px; width: 100%; }
-    .icon-circle { width: 72px; height: 72px; border-radius: 50%; background: #FFFFFF; border: 2px solid #E0E6EB; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .icon-circle:active { background: #F0F0F0; }
-    h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #1A1F36; }
-    .message { font-size: 15px; color: #6B7C93; line-height: 1.6; }
-    .hint { font-size: 13px; color: #A0AEC0; margin-top: 20px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1A1F36;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container { text-align: center; max-width: 380px; width: 100%; }
+    .check {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #ECFDF5; color: #10B981;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px; font-size: 36px; font-weight: 700;
+    }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #1A1F36; }
+    .message { font-size: 15px; color: #6B7C93; line-height: 1.6; margin-bottom: 28px; }
+    .btn {
+      display: inline-block; width: 100%;
+      background: #2563EB; color: #ffffff;
+      font-size: 16px; font-weight: 600;
+      padding: 15px 24px; border-radius: 12px;
+      text-decoration: none; border: none; cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hint { font-size: 13px; color: #9AA5B1; margin-top: 16px; line-height: 1.5; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="icon-circle" onclick="history.back()">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B7C93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M15 18l-6-6 6-6"/>
-      </svg>
-    </div>
-    <h1>Go back?</h1>
-    <p class="message">Tap the arrow to return to the previous page.</p>
-    <p class="hint">Or close the browser to open the app.</p>
+    <div class="check">&#10003;</div>
+    <h1>You're all set</h1>
+    <p class="message">Your payment is complete. Tap below to return to Ringback &mdash; your new credit is ready.</p>
+    <a class="btn" href="ringback://billing" id="openApp">Open Ringback</a>
+    <p class="hint">If the app doesn't open, just close this tab and open Ringback yourself.</p>
   </div>
+  <script>
+    // Best-effort: try to open the app on load too. Harmless if the scheme isn't handled.
+    document.getElementById('openApp').addEventListener('click', function () {
+      window.location.href = 'ringback://billing';
+    });
+  </script>
 </body>
 </html>
