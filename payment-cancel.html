@@ -4,51 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Ringback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #ffffff;
-      color: #1A1F36;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F4F4F6;
+      color: #0F172A;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
     }
-    .container { text-align: center; max-width: 380px; width: 100%; }
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px 28px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .logo-mark {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: #0F172A;
+      color: #2563EB;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 800;
+    }
+    .logo-name { font-size: 19px; font-weight: 800; color: #0F172A; letter-spacing: -0.3px; }
     .check {
-      width: 72px; height: 72px; border-radius: 50%;
+      width: 76px; height: 76px; border-radius: 50%;
       background: #ECFDF5; color: #10B981;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px; font-size: 36px; font-weight: 700;
+      margin: 0 auto 22px; font-size: 38px; font-weight: 700;
     }
-    h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #1A1F36; }
-    .message { font-size: 15px; color: #6B7C93; line-height: 1.6; margin-bottom: 28px; }
-    .btn {
-      display: inline-block; width: 100%;
-      background: #2563EB; color: #ffffff;
-      font-size: 16px; font-weight: 600;
-      padding: 15px 24px; border-radius: 12px;
-      text-decoration: none; border: none; cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
+    h1 { font-size: 23px; font-weight: 800; margin-bottom: 10px; color: #0F172A; letter-spacing: -0.4px; }
+    .message { font-size: 15px; font-weight: 500; color: #737686; line-height: 1.6; }
+    .close-hint {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #F0F0F2;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9AA0AE;
+      line-height: 1.5;
     }
-    .hint { font-size: 13px; color: #9AA5B1; margin-top: 16px; line-height: 1.5; }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="card">
+    <div class="logo">
+      <div class="logo-mark">R</div>
+      <div class="logo-name">Ringback</div>
+    </div>
     <div class="check">&#10003;</div>
     <h1>You're all set</h1>
-    <p class="message">Your payment is complete. Tap below to return to Ringback &mdash; your new credit is ready.</p>
-    <a class="btn" href="ringback://billing" id="openApp">Open Ringback</a>
-    <p class="hint">If the app doesn't open, just close this tab and open Ringback yourself.</p>
+    <p class="message">Your payment is complete and your credit has been added.</p>
+    <p class="close-hint">You can close this tab and open the Ringback app &mdash; your new balance is ready.</p>
   </div>
-  <script>
-    // Best-effort: try to open the app on load too. Harmless if the scheme isn't handled.
-    document.getElementById('openApp').addEventListener('click', function () {
-      window.location.href = 'ringback://billing';
-    });
-  </script>
 </body>
 </html>
